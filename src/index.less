@@ -1,0 +1,386 @@
+// compress: true
+
+// Main style
+@import "../src/ui/main-style";
+
+@color1: #1A120E;
+@color11: #49352C;
+@color2: #A1A1A1;
+@color3: #d5a271;
+
+// Navbar style
+@import "../src/ui/nav-style";
+
+header {
+    margin-top: -72px;
+    background-image: url("../public/header.jpg");
+    height: 100% !important; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    .header-text {
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        position: absolute;
+        bottom: 50%;
+        left: 10%;
+        color: #A1A1A1;
+        mix-blend-mode: difference;
+        h1 {
+            font-family: 'Times New Roman';
+            font-size: 8em;
+            font-style: italic;
+        }
+        p {
+            font-family: 'Gabarito';
+            position: absolute;
+            font-size: 1.5em;
+            top: 200px;
+            letter-spacing: 10px;
+        }
+        .header-cap {
+            // position: absolute;
+            // top: 150px;
+            width: 100%;
+            p {
+                position: absolute;
+                top: 350px;
+                border-left: 1px solid @color2;
+                border-right: 1px solid @color2;
+                padding: 30px;
+                font-family: 'Gabarito';
+                letter-spacing: 5px;
+            }  
+        }
+    }
+}
+
+main {
+    .breeds-section {
+        font-family: 'Gabarito';
+        background: linear-gradient(145deg, #121212, #0f0f0f);
+        .header {
+            display: grid; 
+            grid-template-columns: 350px 350px 350px; 
+            gap: 0 100px; 
+            grid-template-areas: 
+                "h1 hr hr";
+            justify-content: center; 
+            padding-top: 30px;
+            border: 1px solid transparent;
+            .h1 { grid-area: h1; }
+            .hr { grid-area: hr; }
+            h1 { 
+                transition: all 0.2s;
+                color: @color2;
+                font-size: 50px;
+                text-align: left;
+                span { color: #928881; }
+            }
+            hr {
+                position: relative;
+                top: 80px;
+                border: 1px solid @color2;
+                border-radius: 100%;
+                height: 0;
+                width: 100%;
+            }
+        }
+        .popular-breeds {
+            display: grid; 
+            grid-template-columns: 350px 350px 350px; 
+            grid-template-rows: 1fr 1fr; 
+            gap: 55px 100px; 
+            grid-template-areas: 
+                "dachshund lr gs"
+                "gr bulldog beagle"; 
+            justify-content: center; 
+            justify-items: stretch; 
+            text-align: center;
+            padding: 50px;
+            transition: all 0.2s;
+            .dachshund { grid-area: dachshund; }
+            .lr { grid-area: lr; }
+            .gs { grid-area: gs; }
+            .gr { grid-area: gr; }
+            .bulldog { grid-area: bulldog; }
+            .beagle { grid-area: beagle; }
+            img {
+                border-radius: 25px;
+                width: 100%;
+                height: 65%;
+                object-fit: cover;
+                transition: all 0.2s;
+            }
+            #breed { 
+                border-radius: 25px;
+                background: linear-gradient(145deg, #121212, #0f0f0f);
+                box-shadow: 18px 18px 37px #070707, -18px -18px 37px #1b1b1b;
+                padding: 20px 20px 20px 20px;
+                transition: all 0.5s;
+                &:hover {
+                    background: #121212;
+                    box-shadow: 18px 18px 37px #070707, -18px -18px 37px #070707;
+                    img { width: 101%; }
+                }
+                .breed-text {
+                    // margin-bottom: 50px;
+                    h5 {
+                        color: @color2;
+                        font-size: 20px;
+                        margin: 20px 0 10px 0;
+                    }
+                    hr {
+                        color: @color3;
+                        width: 70%;
+                        margin: 20px auto;
+                    }
+                    p {
+                        margin: 0 10px 0 10px;
+                        color: @color2;
+                    }
+                    a {
+                        text-decoration: none;
+                        transition: all 0.2s;
+                        color: @color11;
+                        &:hover { color: @color3; }
+                    }
+                }
+            }
+        }
+    }
+    .action-section {
+        .take-action {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            grid-template-rows: 1fr; 
+            gap: 15px 0px; 
+            grid-template-areas: 
+                "header form"; 
+            justify-content: stretch; 
+            justify-items: stretch; 
+            align-items: stretch; 
+            .header { grid-area: header; }
+            .form { grid-area: form; }
+        }
+    }
+}
+
+footer {
+    background-color: @color3;
+    font-family: 'Gabarito';
+    border: 1px solid transparent;
+    .social-media {
+        text-align: center;
+        gap: 100px;
+        a {
+            gap: 100px;
+            text-decoration: none;
+        }
+    }
+    #copyright {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+// Compatibility (desktop --> mobile)
+@media only screen and (max-width: 1280px) {
+    .breeds-section {
+        .header {
+            display: unset !important; 
+            h1 { 
+                color: @color2;
+                font-size: 50px;
+                text-align: center !important;
+                span { color: #928881; }
+            }
+            hr { display: none; }
+        }
+        .popular-breeds {
+            grid-template-columns: 350px 350px !important; 
+            grid-template-rows: repeat(3, 1fr) !important; 
+            grid-template-areas: 
+                "dachshund lr"
+                "gs gr"
+                "bulldog beagle" !important; 
+            justify-content: center !important; 
+            justify-items: stretch !important; 
+            align-items: stretch !important; 
+        }
+    }
+}
+@media only screen and (max-width: 950px) {
+    nav {
+        #nav-button {
+            display: unset;
+            position: fixed;
+            transition: all 0.2s;
+            background-color: @color1;
+            margin: 15px 17px 17px 17px;
+            z-index: 4;
+            border: none;
+            border-radius: 25px;
+            padding: 8px 15px 8px 15px;
+            color: @color2;
+            transition: all 0.2s;
+            &:hover { 
+                cursor: pointer;
+                color: @color3;
+            }
+            .material-symbols-rounded {
+                position: relative;
+                top: 2px;
+                font-size: 30px;
+                font-variation-settings:
+                    'wght' 500
+            }
+        }
+        .main-menu {
+            transition: all 0.2s;
+            opacity: 0;
+            display: none; 
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            width: 97%;
+            transform: translate(-50%, 0);
+            border-radius: 15px;
+            background-color: @color1;
+            z-index: 3;
+            text-align: center;
+            #home-button { 
+                position: unset;
+                padding-left: 25px;
+                margin-top: 15px;
+                i { display: none; }
+            }
+            a {
+                display: block;
+                float: none !important;
+                background-color: transparent !important;
+            }
+            #nav-links {
+                margin-left: 0;
+                #mobile-alt { 
+                    z-index: 5;
+                    display: none;
+                    position: absolute;
+                    left: 50%;
+                    top: 180px;
+                    transform: translate(-50%, 0);
+                    grid-template-columns: 150px 150px 250px; 
+                    grid-template-rows: 1fr; 
+                    gap: 0px 0px; 
+                    grid-template-areas: 
+                        ". . ."; 
+                }
+            }
+        }
+    }
+    header { margin-top: 0; }
+}
+@media only screen and (max-width: 834px) {
+    .breeds-section {
+        .header { 
+            h1 { 
+                font-size: 45px !important; 
+            } 
+        }
+        .popular-breeds {
+            grid-template-columns: 350px !important; 
+            grid-template-rows: repeat(6, 1fr) !important; 
+            grid-template-areas: 
+                "dachshund"
+                "lr"
+                "gs"
+                "gr"
+                "bulldog"
+                "beagle" !important; 
+            padding-top: 0 !important;
+        }
+    }
+}
+@media only screen and (max-width: 550px) {
+    nav {
+        .main-menu {
+            #nav-links {
+                #mobile-alt { 
+                    position: unset !important;
+                    transform: translate(0, 0) !important;
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 428px) {
+    nav {
+        .main-menu {
+            width: 93%;
+        }
+    }
+    header { 
+        .header-text {
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+    .breeds-section {
+        .header { 
+            h1 { 
+                font-size: 35px !important; 
+            } 
+        }
+        .popular-breeds {
+            grid-template-columns: 300px !important; 
+            img {
+                border-radius: 25px;
+                width: 100% !important;
+                height: 65%;
+                object-fit: cover;
+                transition: all 0.2s;
+            }
+            #breed { 
+                border-radius: 25px;
+                background: linear-gradient(145deg, #121212, #0f0f0f);
+                box-shadow: 18px 18px 37px #070707, -18px -18px 37px #1b1b1b;
+                padding: 20px 20px 20px 20px;
+                transition: all 0.5s;
+                &:hover {
+                    background: #121212;
+                    box-shadow: 18px 18px 37px #070707, -18px -18px 37px #070707;
+                    img { width: 101%; }
+                }
+                .breed-text {
+                    // margin-bottom: 50px;
+                    h5 {
+                        color: @color2;
+                        font-size: 20px;
+                        margin: 20px 0 10px 0;
+                    }
+                    hr {
+                        color: @color3;
+                        width: 70%;
+                        margin: 20px auto;
+                    }
+                    p {
+                        margin: 0 10px 0 10px;
+                        color: @color2;
+                    }
+                    a {
+                        text-decoration: none;
+                        transition: all 0.2s;
+                        color: @color11;
+                        &:hover { color: @color3; }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito">
+
+        <link rel="stylesheet" href="../src/index.css">
+        <style>
+            .material-symbols-rounded {
+              font-variation-settings:
+                'FILL' 1,
+                'wght' 200,
+                'GRAD' 0,
+                'opsz' 24
+            }
+        </style>
+
+        <title> Stasik | The best dog </title>
+    </head>
+    <body>
+        <nav>
+            <button onclick="toggleNav()" id="nav-button"><i class="material-symbols-rounded"> menu </i></button>
+            <div class="main-menu" id="main-menu">
+                <a id="home-button" href="#"><i class="material-symbols-rounded" id="menu-icon">
+                    pet_supplies </i> Home </a>
+                <div id="nav-links">
+                    <a href="#"> Breeds </a>
+                    <a href="#"> Characteristics </a>
+                    <a id="more-button" onclick="toggleMoreMenu()"> More <i class="material-symbols-rounded" id="more-icon"> expand_more </i></a>
+                    <div id="mobile-alt">
+                        <a> History </a>
+                        <a> Gallery </a>
+                        <a> Care and Training </a>
+                    </div>
+                    <a href="#"> About Us </a>
+                </div>
+                
+            </div>
+        </nav>
+        <div class="drop-menu" id="drop-menu">
+            <a href=""> History </a>
+            <a> Gallery </a>
+            <a> Care and Training </a>
+        </div>
+
+        <header>
+            <div class="header-text">
+                <h1 align="center"> Stasik </h1>
+                <p> / stæsik :/ </p>
+                <div class="header-cap">
+                    <p> Unquestionably the world's okayest source about doggies </p>
+                </div>
+            </div> 
+        </header>
+
+        <main>
+            <div class="breeds-section">
+                <div class="header">
+                    <h1 class="h1"> <span> Featured </span> or <span> Popular </span> breeds </h1>
+                    <hr class="hr">
+                </div>
+                <div class="popular-breeds">
+                    <div id="breed" class="dachshund">
+                        <img src="../public/images/breeds/dachshund2.png">
+                        <div class="breed-text">
+                            <h5> Dachshund  (Stasik) </h5>
+                            <hr>
+                            <p> Dachshunds are known for their elongated bodies and friendly personalities. They make great family pets. </p>
+                            <br><a href="#"> Read more... </a>
+                        </div>
+                    </div>
+                    <div id="breed" class="lr">
+                        <img src="../public/images/breeds/lr.jpg">
+                        <div class="breed-text">
+                            <h5> Labrador Retriever </h5>
+                            <hr>
+                            <p> Labradors are known for their friendly and outgoing nature. They are often used as service dogs, family pets, and for hunting. </p>
+                            <br><a href="#"> Read more... </a>
+                        </div>
+                    </div>
+                    <div id="breed" class="gs">
+                        <img src="../public/images/breeds/gs.jpg">
+                        <div class="breed-text">
+                            <h5> German Shepherd </h5>
+                            <hr>
+                            <p> German Shepherds are intelligent, loyal, and versatile dogs often used in police and military work. They're also great family dogs. </p>
+                            <br><a href="#"> Read more... </a>
+                        </div>
+                    </div>
+                    <div id="breed" class="gr">
+                        <img src="../public/images/breeds/gr.jpg">
+                        <div class="breed-text">
+                            <h5> Golden Retriever </h5>
+                            <hr>
+                            <p> Golden Retrievers are friendly, intelligent, and good with families. They are often used as therapy and service dogs. </p>
+                            <br><a href="#"> Read more... </a>
+                        </div>
+                    </div>
+                    <div id="breed" class="bulldog">
+                        <img src="../public/images/breeds/bulldog.jpg">
+                        <div class="breed-text">
+                            <h5> Bulldog </h5>
+                            <hr>
+                            <p> Bulldogs are known for their distinctive appearance and calm disposition. They make great companions. </p>
+                            <br><a href="#"> Read More... </a>
+                        </div>
+                    </div>
+                    <div id="breed" class="beagle">
+                        <img src="../public/images/breeds/beagle.jpg">  
+                        <div class="breed-text">
+                            <h5> Beagle </h5>
+                            <hr>
+                            <p> Beagles are friendly, curious, and have a strong sense of smell. They are often used as hunting and detection dogs. </p>
+                            <br><a href="#"> Read more... </a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="action-section">
+                <div class="take-action">
+                    <div class="header">
+                        Take Action
+                    </div>
+                    <div class="form">
+                        <form action="submit.php" method="POST">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                    
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" name="email" required>
+                    
+                            <label for="question">Your Question:</label>
+                            <textarea id="question" name="question" rows="4" required></textarea>
+                    
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+        </main>
+
+        <footer>
+            <!-- <div class="social-media">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Twitter</a>
+            </div> -->
+            <p id="copyright"> &copy; 2023 Stasik. All rights reserved. </p>
+        </footer>
+
+        <script src="../src/main.js"></script>
+    </body>
+</html>
