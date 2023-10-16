@@ -1,0 +1,17 @@
+footer {
+  background-color: #d5a271;
+  font-family: 'Gabarito';
+  border: 1px solid transparent;
+}
+footer .social-media {
+  text-align: center;
+  gap: 100px;
+}
+footer .social-media a {
+  gap: 100px;
+  text-decoration: none;
+}
+footer #copyright {
+  font-size: 15px;
+  text-align: center;
+}

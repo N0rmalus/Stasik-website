@@ -1,15 +1,13 @@
 // compress: true
 
-// Main style
-@import "../src/ui/main-style";
+@import "../src/ui/main-style"; // Main style
+@import "../src/ui/nav-style"; // Navbar style
+@import "../src/ui/footer"; // Footer
 
 @color1: #1A120E;
 @color11: #49352C;
 @color2: #A1A1A1;
 @color3: #d5a271;
-
-// Navbar style
-@import "../src/ui/nav-style";
 
 header {
     margin-top: -72px;
@@ -61,8 +59,8 @@ header {
 }
 
 main {
+    font-family: 'Gabarito';
     .breeds-section {
-        font-family: 'Gabarito';
         background: linear-gradient(145deg, #121212, #0f0f0f);
         .header {
             display: grid; 
@@ -126,10 +124,9 @@ main {
                 &:hover {
                     background: #121212;
                     box-shadow: 18px 18px 37px #070707, -18px -18px 37px #070707;
-                    img { width: 101%; }
+                    img { width: 102%; }
                 }
                 .breed-text {
-                    // margin-bottom: 50px;
                     h5 {
                         color: @color2;
                         font-size: 20px;
@@ -155,42 +152,97 @@ main {
         }
     }
     .action-section {
+        background-color: #000000;
+        padding: 100px;
         .take-action {
             display: grid; 
-            grid-template-columns: 1fr 1fr; 
+            grid-template-columns: 600px 600px; 
             grid-template-rows: 1fr; 
-            gap: 15px 0px; 
+            gap: 0 0; 
             grid-template-areas: 
                 "header form"; 
-            justify-content: stretch; 
+            justify-content: center; 
             justify-items: stretch; 
-            align-items: stretch; 
-            .header { grid-area: header; }
-            .form { grid-area: form; }
+            text-align: center;
+            align-items: center; 
+            .header { 
+                border-right: 1px solid @color2;
+                font-size: 50px;
+                margin-bottom: 50px;
+                grid-area: header; 
+                text-align: left;
+                h1 {
+                    transition: all 0.2s;
+                    color: @color2;
+                    padding-right: 100px;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    span { color: #928881; }
+                }
+                p {
+                    width: 70%;
+                    font-size: 20px;
+                    color: @color3;
+                }
+                
+            }
+            .form { 
+                padding: 0;
+                grid-area: form; 
+                color: @color2;
+                form {
+                    text-align: left;
+                    position: relative;
+                    left: 100px;
+                    label {
+                        font-size: 20px;
+                    }
+                    input {
+                        font-family: 'Gabarito';
+                        color: @color2;
+                        font-size: 20px;
+                        background: linear-gradient(145deg, #121212, #0f0f0f);
+                        border-radius: 20px;
+                        height: 50px;
+                        border: 1px solid transparent;
+                        width: 60%;
+                        margin-bottom: 50px !important; 
+                        padding: 0 15px 0 15px;
+                        transition: all 0.2s;
+                        &:focus { border: 1px solid @color2; }
+                    }
+                    textarea {
+                        font-family: 'Gabarito';
+                        color: @color2;
+                        font-size: 20px;
+                        padding: 15px;
+                        background: linear-gradient(145deg, #121212, #0f0f0f);
+                        border-radius: 20px;
+                        resize: vertical;
+                        max-height: 150px;
+                        border: 1px solid transparent;
+                        width: 80%;
+                        transition: all 0.2s;
+                        &:focus { border: 1px solid @color2; }
+                    }
+                    button {
+                        font-family: 'Gabarito';
+                        background-color: #928881;
+                        border: none;
+                        width: 85%;
+                        border-radius: 20px;
+                        padding: 10px;
+                        font-size: 30px;
+                        &:hover { cursor: pointer; }
+                    }
+                }
+            }
         }
-    }
-}
-
-footer {
-    background-color: @color3;
-    font-family: 'Gabarito';
-    border: 1px solid transparent;
-    .social-media {
-        text-align: center;
-        gap: 100px;
-        a {
-            gap: 100px;
-            text-decoration: none;
-        }
-    }
-    #copyright {
-        font-size: 15px;
-        text-align: center;
     }
 }
 
 // Compatibility (desktop --> mobile)
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1400px) {
     .breeds-section {
         .header {
             display: unset !important; 
@@ -214,82 +266,38 @@ footer {
             align-items: stretch !important; 
         }
     }
-}
-@media only screen and (max-width: 950px) {
-    nav {
-        #nav-button {
-            display: unset;
-            position: fixed;
-            transition: all 0.2s;
-            background-color: @color1;
-            margin: 15px 17px 17px 17px;
-            z-index: 4;
-            border: none;
-            border-radius: 25px;
-            padding: 8px 15px 8px 15px;
-            color: @color2;
-            transition: all 0.2s;
-            &:hover { 
-                cursor: pointer;
-                color: @color3;
-            }
-            .material-symbols-rounded {
-                position: relative;
-                top: 2px;
-                font-size: 30px;
-                font-variation-settings:
-                    'wght' 500
-            }
+    .action-section {
+        .take-action {
+            grid-template-columns: 500px 500px !important; 
         }
-        .main-menu {
-            transition: all 0.2s;
-            opacity: 0;
-            display: none; 
-            position: fixed;
-            top: 10px;
-            left: 50%;
-            width: 97%;
-            transform: translate(-50%, 0);
-            border-radius: 15px;
-            background-color: @color1;
-            z-index: 3;
-            text-align: center;
-            #home-button { 
-                position: unset;
-                padding-left: 25px;
-                margin-top: 15px;
-                i { display: none; }
-            }
-            a {
-                display: block;
-                float: none !important;
-                background-color: transparent !important;
-            }
-            #nav-links {
-                margin-left: 0;
-                #mobile-alt { 
-                    z-index: 5;
-                    display: none;
-                    position: absolute;
-                    left: 50%;
-                    top: 180px;
-                    transform: translate(-50%, 0);
-                    grid-template-columns: 150px 150px 250px; 
-                    grid-template-rows: 1fr; 
-                    gap: 0px 0px; 
-                    grid-template-areas: 
-                        ". . ."; 
+    }
+}
+@media only screen and (max-width: 1200px) {
+    main {
+        .action-section {
+            .take-action {
+                grid-template-columns: 400px 400px !important; 
+                .form {
+                    form {
+                        input { 
+                            font-size: 15px;
+                            margin-bottom: 20px !important; 
+                        }
+                    }
                 }
             }
         }
     }
+    
+}
+@media only screen and (max-width: 950px) {
     header { margin-top: 0; }
 }
-@media only screen and (max-width: 834px) {
+@media only screen and (max-width: 950px) {
     .breeds-section {
         .header { 
             h1 { 
-                font-size: 45px !important; 
+                font-size: 40px !important; 
             } 
         }
         .popular-breeds {
@@ -303,6 +311,56 @@ footer {
                 "bulldog"
                 "beagle" !important; 
             padding-top: 0 !important;
+        }
+    }
+    .action-section {
+        padding: 50px !important;
+        .take-action {
+            grid-template-rows: 400px 1fr !important; 
+            grid-template-areas: 
+                "header"
+                "form" !important; 
+            justify-content: space-evenly !important; 
+            justify-items: center !important; 
+            align-items: stretch !important; 
+            .header { 
+                font-size: 40px !important;
+                text-align: center !important;
+                width: 100% !important;
+                position: relative;
+                left: 50%;
+                border: none !important;
+                h1 { padding-right: 0 !important; }
+                p {
+                    width: 100% !important;
+                    font-size: 15px !important;
+                }
+                
+            }
+            .form { 
+                width: 100% !important;
+                position: relative;
+                left: 50%;
+                form {
+                    position: unset !important;
+                    text-align: center !important;
+                    input {
+                        border-radius: 20px;
+                        width: 90% !important;
+                        margin-bottom: 50px !important; 
+                        padding: 0 15px 0 15px;
+                    }
+                    textarea {
+                        font-size: 15px !important;
+                        width: 90% !important;
+                    }
+                    button {
+                        width: 55% !important;
+                        padding: 5px !important;
+                        font-size: 25px !important;
+                    }
+                }
+            }
         }
     }
 }
@@ -378,6 +436,30 @@ footer {
                         transition: all 0.2s;
                         color: @color11;
                         &:hover { color: @color3; }
+                    }
+                }
+            }
+        }
+    }
+    .action-section {
+        padding-top: 0px !important;
+        .take-action {
+            .form { 
+                width: 100% !important;
+                position: relative;
+                left: 50%;
+                form {
+                    input {
+                        border-radius: 15px !important;
+                        width: 70% !important;
+                    }
+                    textarea {
+                        border-radius: 15px !important;
+                        width: 70% !important;
+                    }
+                    button {
+                        width: 55% !important;
+                        font-size: 25px !important;
                     }
                 }
             }

@@ -1,0 +1,227 @@
+// compress: true
+
+@import "../src/ui/main-style"; // Main style
+@import "../src/ui/nav-style"; // Navbar style
+@import "../src/ui/footer"; // Footer
+
+@color1: #1A120E;
+@color11: #49352C;
+@color2: #A1A1A1;
+@color3: #d5a271;
+
+@font: 'Gabarito';
+
+body { 
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    background-attachment: fixed;
+}
+
+main {
+    font-family: @font;
+    padding: 75px;
+    section {
+        background: linear-gradient(145deg, #121212, #0f0f0f);
+        box-shadow: 18px 18px 37px #070707, -18px -18px 37px #1b1b1b;
+        padding: 50px;
+        border-radius: 25px;
+        .about {
+            display: grid; 
+            grid-auto-columns: 1fr; 
+            grid-template-columns: 500px 1fr; 
+            grid-template-rows: 1fr; 
+            gap: 0 50px; 
+            grid-template-areas: 
+                "gallery information"; 
+            justify-content: stretch; 
+            justify-items: stretch; 
+            align-items: stretch;
+            .gallery { 
+                grid-area: gallery;
+                #main-img {
+                    border-radius: 20px;
+                    width: 500px;
+                    height: 700px;
+                    object-fit: cover;
+                    transition: opacity 0.2s;
+                    opacity: 1;
+                }
+                .img-window {
+                    width: 100px; /* Set your desired fixed width */
+                    height: 100px; /* Set your desired fixed height */
+                    border-radius: 20px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    float: left;
+                    margin: 12px;
+                    img {
+                        filter: grayscale(100%);
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 0.2s;
+                        &:hover { 
+                            cursor: pointer;
+                            filter: grayscale(0%); 
+                        }
+                    }
+                }
+            }
+            .information { 
+                color: @color3;
+                grid-area: information;
+                h1 {
+                    font-size: 55px;
+                    margin: 0;
+                    color: @color2;
+                }
+                hr {
+                    border-radius: 100%;
+                }
+                .about-text {
+                    width: 100%;
+                    float: left;
+                    font-size: 30px;
+                    // margin: -10px 0 0 0;
+                    h3 {
+                        margin: 20px 0 0 0;
+                    }
+                    h5 {
+                        margin: 15px 0 15px 0;
+                        span { color: @color2; }
+                    }
+                    p {
+                        text-align: justify;
+                        // margin: -20px 0 0 0;
+                        padding: 0;
+                        color: @color2;
+                        font-size: 20px;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+// Compatibility (desktop --> mobile)
+@media only screen and (max-width: 1300px) {
+    main {
+        section {
+            .about {
+                grid-template-columns: 400px 1fr; 
+                gap: 0 40px; 
+                .gallery {
+                    #main-img {
+                        width: 400px;
+                        height: 600px;
+                    }
+                    .img-window {
+                        width: 80px;
+                        height: 80px;
+                        margin: 5px;
+                    }
+                }
+                .information { 
+                    h1 { font-size: 45px; }
+                    .about-text {
+                        font-size: 25px;
+                        p { font-size: 17px; }
+                        
+                    }
+                }
+            }
+        }
+    } 
+}
+@media only screen and (max-width: 880px) {
+    main {
+        section {
+            .about {
+                grid-template-columns: 300px 1fr; 
+                gap: 0 40px; 
+                .gallery {
+                    #main-img {
+                        width: 300px;
+                        height: 500px;
+                    }
+                    .img-window {
+                        width: 70px;
+                        height: 70px;
+                        margin: 5px;
+                    }
+                }
+                .information { 
+                    h1 { font-size: 35px; }
+                    .about-text {
+                        font-size: 25px;
+                        p { font-size: 17px; }
+                        h3 { 
+                            font-size: 20px;
+                            i { font-size: 20px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 830px) {
+    main {
+        section {
+            .about {
+                grid-template-columns: 100%; 
+                grid-template-rows: 1fr 0.7fr; 
+                gap: 0 0; 
+                grid-template-areas: 
+                    "gallery"
+                    "information"; 
+                .gallery {
+                    margin-bottom: 40px;
+                    #main-img {
+                        width: 100%;
+                        height: 600px;
+                    }
+                    .img-window {
+                        width: 70px;
+                        height: 70px;
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 620px) {
+    main {
+        padding: 15px;
+        section { padding: 20px; }
+    }
+}
+@media only screen and (max-width: 400px) {
+    main {
+        section {
+            .about {
+                grid-template-columns: 100%; 
+                grid-template-rows: 100% 0.7fr; 
+                gap: 0 0; 
+                grid-template-areas: 
+                    "gallery"
+                    "information"; 
+                .gallery {
+                    margin-bottom: 40px;
+                    #main-img {
+                        width: 100%;
+                        height: 400px;
+                    }
+                    .img-window {
+                        width: 70px;
+                        height: 70px;
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

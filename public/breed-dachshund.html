@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito">
+
+        <link rel="stylesheet" href="../src/breed-dachshund.css">
+        <style>
+            .material-symbols-rounded {
+              font-variation-settings:
+                'FILL' 1,
+                'wght' 200,
+                'GRAD' 0,
+                'opsz' 24
+            }
+        </style>
+
+        <title> Stasik | The best dog </title>
+    </head>
+    <body>
+        <nav>
+            <button onclick="toggleNav()" id="nav-button"><i class="material-symbols-rounded"> menu </i></button>
+            <div class="main-menu" id="main-menu">
+                <a id="home-button"><i class="material-symbols-rounded" id="menu-icon">
+                    pet_supplies </i> Home </a>
+                <div id="nav-links">
+                    <a href="#"> Breeds </a>
+                    <a href="#"> Characteristics </a>
+                    <a id="more-button" onclick="toggleMoreMenu()"> More <i class="material-symbols-rounded" id="more-icon"> expand_more </i></a>
+                    <div id="mobile-alt">
+                        <a> History </a>
+                        <a> Gallery </a>
+                        <a> Care and Training </a>
+                    </div>
+                    <a href="#"> About Us </a>
+                </div>
+                
+            </div>
+        </nav>
+        <div class="drop-menu" id="drop-menu">
+            <a href=""> History </a>
+            <a> Gallery </a>
+            <a> Care and Training </a>
+        </div>
+
+        <main>
+            <section>
+                <div class="about">
+                    <div class="gallery">
+                        <img id="main-img" src="../public/images/breeds/dachshund4.png">
+                        <div class="img-window">
+                            <img class="thumbnail" src="../public/images/breeds/dachshund4.png">
+                        </div>
+                        <div class="img-window">
+                            <img class="thumbnail" src="../public/images/breeds/dachshund3.png">
+                        </div>
+                        <div class="img-window">
+                            <img class="thumbnail" src="../public/images/breeds/dachshund.png">
+                        </div>
+                        <div class="img-window">
+                            <img class="thumbnail" src="../public/images/breeds/dachshund2.png">
+                        </div>
+                    </div>
+                    <div class="information">
+                        <h1> Dachshund </h1>
+                        <hr>
+                        <div class="about-text">
+                            <h3> <i class="material-symbols-rounded"> lightbulb </i> About </h3>
+                            <p> The Dachshund, often affectionately referred to as the "wiener dog" or "sausage dog," is a small breed with a big personality. Known for their elongated bodies and short legs, Dachshunds are popular for their charming and playful nature. They come in various coat types, including smooth, longhaired, and wirehaired, and a wide range of colors. <br> <br> Dachshunds make loving and loyal pets, and their unique appearance and spirited personalities have endeared them to dog lovers around the world. </p>
+                            <h5> Life Expectancy: <span> 12 - 16 years </span> </h5>
+                            <h5> Health: <span> Very healthy doggies </span> </h5>
+                            <h3> <i class="material-symbols-rounded"> attractions </i> Fun Fact </h3>
+                            <p> Dachshunds have a rich history and were originally bred in Germany for hunting badgers. Their name, "Dachshund," translates to "badger dog" in German. </p>
+                            <h3> <i class="material-symbols-rounded"> pet_supplies </i> Favourite Foods </h3>
+                            <p> Dachshunds, like many dogs, enjoy a balanced diet. Some of their favorite foods include high-quality dog food, lean meats, vegetables, and occasional treats. Always monitor their food intake to maintain a healthy weight. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <!-- <div class="social-media">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Twitter</a>
+            </div> -->
+            <p id="copyright"> &copy; 2023 Stasik. All rights reserved </p>
+        </footer>
+
+        <script src="../src/main.js"></script>
+    </body>
+</html>
